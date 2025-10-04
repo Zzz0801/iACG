@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的账号 - iAcg</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <h1>我的 - iAcg</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="forum.html">论坛</a>
+      <a href="my.html" class="active">我的</a>
+      <a href="login.html">登录</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>账户信息</h2>
+    <div id="accountInfo">
+      <!-- 用户名、邮箱、头像显示 -->
+    </div>
+    <form id="avatarForm" enctype="multipart/form-data">
+      <label>更换头像</label>
+      <input type="file" name="avatar" accept="image/*">
+      <button type="submit">上传头像</button>
+    </form>
+
+    <form id="pwdForm">
+      <h3>修改密码</h3>
+      <input type="password" name="oldPassword" placeholder="旧密码" required>
+      <input type="password" name="newPassword" placeholder="新密码" required>
+      <button type="submit">修改密码</button>
+    </form>
+
+    <button id="logoutBtn">退出登录</button>
+  </section>
+
+  <section class="card">
+    <h2>我的帖子</h2>
+    <div id="myPosts"></div>
+  </section>
+</main>
+
+<script src="my.js"></script>
+</body>
+</html>

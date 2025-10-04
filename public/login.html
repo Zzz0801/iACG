@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>iAcg 登录</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: '微软雅黑', Arial, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      color: #333;
+    }
+    header {
+      background-color: #ff8c00;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 { margin:0; font-size:24px; }
+    nav a { color:white; margin-left:20px; text-decoration:none; font-weight:bold; transition:color 0.3s; }
+    nav a:hover { color:#ffd700; }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 70px);
+    }
+
+    .login-card {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      width: 350px;
+      text-align: center;
+    }
+
+    .login-card h2 {
+      color: #ff8c00;
+      margin-bottom: 20px;
+    }
+
+    .login-card input[type="text"],
+    .login-card input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .login-card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      background-color: #ff8c00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-card button:hover {
+      background-color: #e67e00;
+    }
+
+    .login-card p {
+      margin-top: 15px;
+      font-size: 0.9em;
+    }
+
+    .login-card a {
+      color: #ff8c00;
+      text-decoration: none;
+    }
+    .login-card a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>iAcg</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="forum.html">论坛</a>
+      <a href="my.html">我的</a>
+      <a href="login.html">登录</a>
+      <a href="register.html">注册</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="login-card">
+    <h2>用户登录</h2>
+    <form action="/login" method="POST">
+      <input type="text" name="username" placeholder="用户名" required>
+      <input type="password" name="password" placeholder="密码" required>
+      <button type="submit">登录</button>
+    </form>
+    <p>还没有账号？ <a href="register.html">立即注册</a></p>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>iAcg 首页</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: '微软雅黑', Arial, sans-serif;
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      color: #333;
+    }
+    header {
+      background-color: #ff8c00;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    header h1 { margin:0; font-size:24px; }
+    nav a { color:white; margin-left:20px; text-decoration:none; font-weight:bold; transition:color 0.3s; }
+    nav a:hover { color:#ffd700; }
+    main { padding:20px; max-width:1000px; margin:0 auto; display:flex; flex-direction:column; gap:20px; }
+    .banner { background:#ffe0b2; border-radius:10px; padding:40px; text-align:center; font-size:28px; color:#ff6f00; }
+    .card { background:white; border-radius:10px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s; }
+    .card:hover { transform: translateY(-5px); }
+    .card h2 { margin-top:0; color:#ff8c00; }
+    .post-list { list-style:none; padding-left:0; }
+    .post-list li { padding:8px 0; border-bottom:1px solid #eee; }
+    .post-list li a { text-decoration:none; color:#333; transition:color 0.3s; }
+    .post-list li a:hover { color:#ff8c00; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>iAcg</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="forum.html">论坛</a>
+      <a href="my.html">我的</a>
+      <a href="login.html">登录</a>
+      <a href="register.html">注册</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="banner">欢迎来到 iAcg 二次元社区！探索你的二次元世界</div>
+
+  <div class="card">
+    <h2>今日推荐</h2>
+    <p>热门二次元内容推荐，快来看看吧！</p>
+  </div>
+
+  <div class="card">
+    <h2>热门帖子</h2>
+    <ul id="hotPosts" class="post-list">
+      <!-- 动态填充：从 /posts 随机选择 4 个标题 -->
+    </ul>
+  </div>
+</main>
+
+<script src="index.js"></script>
+</body>
+</html>

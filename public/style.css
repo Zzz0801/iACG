@@ -1,0 +1,253 @@
+/* ---------- 通用样式 ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', '微软雅黑', Arial, sans-serif;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  color: #333;
+}
+
+/* 更柔和的主色与背景 */
+:root{
+  --primary:#ff8c00;
+  --muted:#f6f6f7;
+  --card-bg:#ffffff;
+  --text:#2c2c2c;
+}
+
+/* ---------- 顶部导航 ---------- */
+header {
+  background-color: #ff8c00;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-end; /* 将导航和标题移到右侧 */
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.header-inner{ display:flex; gap:20px; align-items:center; justify-content:flex-end; width:100%; }
+.header-inner h1{ margin:0; }
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffd700;
+}
+
+/* ---------- 主体 ---------- */
+main {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.banner{ 
+  background: linear-gradient(90deg, rgba(255,140,0,0.08), rgba(255,140,0,0.04));
+  border-left: 4px solid var(--primary);
+  padding: 18px 20px;
+  border-radius: 10px;
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+/* ---------- Banner / 首页欢迎 ---------- */
+.banner {
+  background: #ffe0b2;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  font-size: 28px;
+  color: #ff6f00;
+}
+
+/* ---------- 卡片 ---------- */
+.card, .post-card, .login-card, .register-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(18,22,26,0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover, .post-card:hover, .login-card:hover, .register-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(18,22,26,0.08);
+}
+
+.card h2, .post-card h2, .login-card h2, .register-card h2 {
+  margin-top: 0;
+  color: var(--primary);
+  font-size: 18px;
+}
+
+/* ---------- 帖子列表 ---------- */
+.post-card {
+  margin-bottom: 12px;
+  padding: 18px;
+}
+
+.post-row{ display:flex; gap:12px }
+.avatar{
+  width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,#ffd7a6,#ff8c00); color:white; display:flex; align-items:center; justify-content:center; font-weight:700;
+  flex:0 0 48px; font-size:16px; box-shadow:0 4px 10px rgba(0,0,0,0.06)
+}
+.post-main{ flex:1 }
+.post-header{ display:flex; justify-content:space-between; align-items:flex-start }
+
+.post-card h2{ font-size: 20px; margin-bottom:8px }
+.post-meta{ color:#666; font-size:13px; margin-bottom:10px }
+.post-content{ color:var(--text); line-height:1.6; margin-bottom:12px }
+.post-media img, .post-media video{ width:100%; border-radius:8px; display:block; margin-top:8px }
+
+/* Modal header: title and close aligned horizontally */
+.modal-header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.modal-header h2{ margin:0 }
+
+.post-actions{ display:flex; gap:10px; align-items:center }
+.btn-like{ background:transparent; border:1px solid rgba(0,0,0,0.06); padding:6px 8px; border-radius:8px; cursor:pointer; color:var(--primary); }
+.btn-like:hover{ background: rgba(255,140,0,0.06); border-color: rgba(255,140,0,0.18); }
+
+.btn-delete{ background:#ffecec; color:#c00; border:1px solid #f5c2c2; padding:6px 8px; border-radius:8px; cursor:pointer }
+.btn-delete:hover{ background:#ffd6d6 }
+
+/* 评论 */
+.comments-wrap{ margin-top:14px; border-top:1px solid #f0f0f0; padding-top:12px }
+.comment{ padding:10px 0; border-bottom:1px dashed #f3f3f3 }
+.comment-meta{ color:#888; font-size:12px; margin-bottom:6px }
+.comment-content{ font-size:14px; color:#333; margin-bottom:6px }
+.comment button{ background:transparent; border:none; color:var(--primary); cursor:pointer }
+
+.post-create .row{ display:flex; gap:10px; align-items:center }
+.post-create input[type=file]{ flex:1 }
+
+.account-avatar img { width:64px; height:64px; border-radius:50%; }
+.card img { max-width: 100%; }
+.card h3 { margin: 0 0 6px 0 }
+
+@media (min-width:900px){
+  main{ max-width:1100px }
+  .post-create{ display:flex }
+}
+
+/* ---------- 表单样式 ---------- */
+input[type="text"], input[type="password"], input[type="email"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* 默认表单按钮（移动优先：表单内按钮为块级以便易点按） */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #e67e00;
+}
+
+/* 对帖子操作区的按钮采用内联样式，避免受全局 button 宽度影响 */
+.post-actions button, .comments-wrap button, .post-actions .btn-delete, .post-actions .btn-like {
+  width: auto;
+  padding: 6px 10px;
+  margin-top: 0;
+}
+
+/* ---------- 返回首页按钮 ---------- */
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff8c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #e67e00;
+}
+
+/* ---------- 文件上传 ---------- */
+input[type="file"] {
+  margin-top: 10px;
+}
+
+/* Floating action button for new post */
+.fab{
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border: none;
+  cursor: pointer;
+  z-index: 2000;
+}
+.fab:active{ transform: translateY(1px); }
+
+/* Modal */
+.modal{ position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); z-index: 1999; }
+.modal[aria-hidden="false"]{ display: flex; }
+.modal-content{ width: 95%; max-width: 720px; padding: 20px; position: relative; }
+.modal-close {
+  position: absolute;
+  right: 12px;
+  top: 0px;  
+  background: rgba(0,0,0,0.06);
+  border: none;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.modal-close:hover{ background: rgba(0,0,0,0.1); }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iAcg 论坛</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <h1>iAcg</h1>
+    <nav>
+      <a href="index.html">首页</a>
+      <a href="forum.html" class="active">论坛</a>
+      <a href="my.html">我的</a>
+      <a href="login.html">登录</a>
+      <a href="register.html">注册</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="banner">
+    在这里分享二次元的趣事与创作，尊重原创，友善交流。
+  </div>
+
+  <!-- 发帖 Modal（初始隐藏） -->
+  <div id="postModal" class="modal" aria-hidden="true">
+    <div class="modal-content card">
+      <div class="modal-header">
+        <h2>发帖</h2>
+        <button id="modalClose" class="modal-close" aria-label="关闭发帖窗口">×</button>
+      </div>
+      <form id="postForm" enctype="multipart/form-data">
+        <input type="text" name="title" id="postTitle" placeholder="帖子标题" required>
+        <textarea name="content" id="postContent" placeholder="说点什么吧..." required></textarea>
+        <div class="row">
+          <input type="file" name="media" id="postMedia" accept="image/*,video/*">
+          <button type="submit">发布</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 悬浮发帖按钮 -->
+  <button id="fabPost" class="fab" aria-label="新建帖子">+</button>
+
+  <!-- 帖子列表 -->
+  <section id="postList"></section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
